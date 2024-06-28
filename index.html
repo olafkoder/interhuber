@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image</title>
+    <style>
+        html, body {
+            background: black;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #img {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <img id="img" src="" alt="Random Image">
+    <script>
+        function fetchRandomImage() {
+            const imgElement = document.getElementById('img');
+            const lowQualityWidth = 800;  // Smaller width for faster loading
+            const lowQualityHeight = 800; // Smaller height for faster loading
+            imgElement.src = `https://picsum.photos/${lowQualityWidth}/${lowQualityHeight}?random=${Math.random()}`;
+        }
 
+        window.onload = function() {
+            fetchRandomImage();
+        }
+    </script>
+</body>
+</html>
